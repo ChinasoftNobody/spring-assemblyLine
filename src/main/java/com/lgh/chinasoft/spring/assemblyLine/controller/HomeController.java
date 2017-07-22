@@ -3,6 +3,7 @@ package com.lgh.chinasoft.spring.assemblyLine.controller;
 import com.lgh.chinasoft.spring.assemblyLine.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,5 +23,10 @@ public class HomeController {
     public String home(Model model){
         model.addAttribute("test",userService.test());
         return "index";
+    }
+
+    @GetMapping("/main")
+    public String main(){
+        return "/assembly/home/main";
     }
 }
